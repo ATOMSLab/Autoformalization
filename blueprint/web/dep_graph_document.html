@@ -1,0 +1,739 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dependency graph</title>
+  <meta name="generator" content="plasTeX" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles/theme-white.css" />
+  <link rel="stylesheet" href="styles/dep_graph.css" />
+  
+  <script type="text/x-mathjax-config">
+  
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  
+  </script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">  </script>
+
+
+<link rel="stylesheet" href="styles/extra_styles.css" />
+
+</head>
+
+<body>
+<header>
+  <a class="toc" href="index.html">Home</a>
+  <h1 id="doc_title">Dependencies</h1>
+</header>
+<div class="wrapper">
+<div class="content">
+  <div id="Legend">
+    <span id="legend_title" class="title">Legend
+    <div class="btn">
+       <div class="bar"></div>
+       <div class="bar"></div>
+       <div class="bar"></div>
+    </div></span> 
+    <dl class="legend">
+      
+      <dt>Boxes</dt><dd>definitions</dd>
+      
+      <dt>Ellipses</dt><dd>theorems and lemmas</dd>
+      
+      <dt>Blue border</dt><dd>the <em>statement</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Orange border</dt><dd>the <em>statement</em> of this result is not ready to be formalized; the blueprint needs more work</dd>
+      
+      <dt>Blue background</dt><dd>the <em>proof</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Green border</dt><dd>the <em>statement</em> of this result is formalized</dd>
+      
+      <dt>Green background</dt><dd>the <em>proof</em> of this result is formalized</dd>
+      
+      <dt>Dark green background</dt><dd>the <em>proof</em> of this result and all its ancestors are formalized</dd>
+      
+      <dt>Dark green border</dt><dd>this is in Mathlib</dd>
+      
+    </dl>
+  </div>
+    <div id="graph"></div>
+<div id="statements">
+
+    
+    <div class="dep-modal-container" id="def:A_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:A" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.5.2</span><span class="definition_thmtitle">Total Catalyst Surface Area</span></div>
+    <div class="thm_thmcontent"><p>    The total catalyst surface area is: </p>
+<div class="displaymath" id="a0000000014">
+  \[ A = s_0 \left(1 + C \sum _{i=0}^{\infty } x^{i+1}\right) \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:A">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/A">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:bet_equation_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:bet_equation" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.7.1</span><span class="definition_thmtitle">BET Equation (General Form)</span></div>
+    <div class="thm_thmcontent"><p>    The BET equation in its general form is: </p>
+<div class="displaymath" id="a0000000023">
+  \[ \text{BET} = \frac{V}{A \cdot V_0} \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:bet_equation">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/BET_equation">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:bet_parameters_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:bet_parameters" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.1</span><span class="definition_thmtitle">BET System Parameters</span></div>
+    <div class="thm_thmcontent"><p>   A BET system is characterized by: </p>
+<ul class="itemize">
+  <li><p>\(s_0\) – surface area of zeroth layer (positive) </p>
+</li>
+  <li><p>\(E_1\) – activation energy for first layer adsorption </p>
+</li>
+  <li><p>\(E_L\) – activation energy for subsequent layers </p>
+</li>
+  <li><p>\(R\) – universal gas constant (positive) </p>
+</li>
+  <li><p>\(T\) – absolute temperature (positive) </p>
+</li>
+  <li><p>\(a_1, b_1, g\) – fitted constants (positive) </p>
+</li>
+  <li><p>\(P\) – pressure (positive) </p>
+</li>
+  <li><p>\(P_0\) – saturation pressure (positive) </p>
+</li>
+  <li><p>\(V_0\) – monolayer volume (positive) </p>
+</li>
+</ul>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:bet_parameters">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/BET_parameters">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:bet_series_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:bet_series" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.7.3</span><span class="definition_thmtitle">BET Equation (Series Form)</span></div>
+    <div class="thm_thmcontent"><p>    The BET equation in series form is: </p>
+<div class="displaymath" id="a0000000025">
+  \[ \text{BET}_{\text{series}} = \frac{C \cdot s_0 \sum _{i=0}^{\infty } (i+1) \cdot x^{i+1}}{s_0(1 + C \sum _{i=0}^{\infty } x^{i+1})} \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:bet_series">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/BET_series_form">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:bet_simplified_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:bet_simplified" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.7.2</span><span class="definition_thmtitle">BET Equation (Simplified Form)</span></div>
+    <div class="thm_thmcontent"><p>    The simplified BET equation is: </p>
+<div class="displaymath" id="a0000000024">
+  \[ \text{BET}_{\text{simplified}} = \frac{C \cdot P}{(P_0 - P)(1 + (C-1) \cdot P/P_0)} \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:bet_simplified">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/BET_simplified">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:C_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:C" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.4.3</span><span class="definition_thmtitle">BET C Parameter</span></div>
+    <div class="thm_thmcontent"><p>    The BET constant relating first layer to subsequent layers is: </p>
+<div class="displaymath" id="a0000000011">
+  \[ C = \frac{y}{x} = \frac{C_1}{C_L} \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:C">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/C">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:C_1_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:C_1" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.3.2</span><span class="definition_thmtitle">First Layer Constant</span></div>
+    <div class="thm_thmcontent"><p>    The first layer equilibrium constant is: </p>
+<div class="displaymath" id="a0000000007">
+  \[ C_1 = \frac{a_1}{b_1} \exp (E_1 / (RT)) \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:C_1">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/C₁">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:C_L_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:C_L" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.3.1</span><span class="definition_thmtitle">Liquid Phase Constant</span></div>
+    <div class="thm_thmcontent"><p>    The liquid phase constant is: </p>
+<div class="displaymath" id="a0000000006">
+  \[ C_L = \frac{\exp (E_L / (RT))}{g} \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:C_L">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/C_L">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:s_i_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:s_i" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.5.1</span><span class="definition_thmtitle">Surface Area of i-th Layer</span></div>
+    <div class="thm_thmcontent"><p>    The surface area of the \(i\)-th adsorption layer is: </p>
+<div class="displaymath" id="a0000000013">
+  \[ s_i = \begin{cases}  s_0 &  \text{if } i = 0 \\ C \cdot x^i \cdot s_0 &  \text{if } i \geq 1 \end{cases} \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:s_i">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/s_i">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:V_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:V" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.5.3</span><span class="definition_thmtitle">Volume Adsorbed</span></div>
+    <div class="thm_thmcontent"><p>    The total volume adsorbed is: </p>
+<div class="displaymath" id="a0000000015">
+  \[ V = C \cdot s_0 \cdot V_0 \sum _{i=0}^{\infty } (i+1) \cdot x^{i+1} \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:V">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/V">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:x_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:x" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.4.1</span><span class="definition_thmtitle">Dimensionless Pressure x</span></div>
+    <div class="thm_thmcontent"><p>    The dimensionless pressure parameter is: </p>
+<div class="displaymath" id="a0000000009">
+  \[ x = P \cdot C_L \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:x">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/x">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:y_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:y" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.4.2</span><span class="definition_thmtitle">Dimensionless Pressure y</span></div>
+    <div class="thm_thmcontent"><p>    The first-layer dimensionless pressure is: </p>
+<div class="displaymath" id="a0000000010">
+  \[ y = P \cdot C_1 \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:y">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/y">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:bet_main_math_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:bet_main_math" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.8.1</span><span class="lemma_thmtitle">BET Main Mathematical Identity</span></div>
+    <div class="thm_thmcontent"><p>    For \(|x| {\lt} 1\) and \(C {\gt} 0\): </p>
+<div class="displaymath" id="a0000000028">
+  \[ \frac{C \sum _{i=0}^{\infty } (i+1) \cdot x^{i+1}}{1 + C \sum _{i=0}^{\infty } x^{i+1}} = \frac{C \cdot x}{(1-x)(1-x+Cx)} \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#lem:bet_main_math">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/BET_main_math">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:geometric_summable_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:geometric_summable" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.6.1</span><span class="lemma_thmtitle">Geometric Series Summability</span></div>
+    <div class="thm_thmcontent"><p>   For \(|x| {\lt} 1\), the series \(\sum _{n=0}^{\infty } x^{n+1}\) is summable. </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#lem:geometric_summable">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/geometric_series_summable">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:simple_geometric_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:simple_geometric" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.6.3</span><span class="lemma_thmtitle">Simple Geometric Series Sum</span></div>
+    <div class="thm_thmcontent"><p>    For \(|x| {\lt} 1\): </p>
+<div class="displaymath" id="a0000000021">
+  \[ \sum _{n=0}^{\infty } x^{n+1} = \frac{x}{1-x} \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#lem:simple_geometric">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/simple_geometric_series">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:weighted_geometric_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:weighted_geometric" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.6.2</span><span class="lemma_thmtitle">Weighted Geometric Series</span></div>
+    <div class="thm_thmcontent"><p>    For \(|x| {\lt} 1\): </p>
+<div class="displaymath" id="a0000000019">
+  \[ \sum _{n=0}^{\infty } (n+1) \cdot x^{n+1} = \frac{x}{(1-x)^2} \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#lem:weighted_geometric">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/weighted_geometric_series">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:bet_derivation_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:bet_derivation" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.9.1</span><span class="theorem_thmtitle">BET Derivation</span></div>
+    <div class="thm_thmcontent"><p>    Under the conditions: </p>
+<ul class="itemize">
+  <li><p>All physical parameters positive </p>
+</li>
+  <li><p>\(P {\lt} P_0\) (pressure below saturation) </p>
+</li>
+  <li><p>\(|x| {\lt} 1\) (convergence condition) </p>
+</li>
+  <li><p>\(P_0 = 1/C_L\) (saturation pressure relation) </p>
+</li>
+</ul>
+<p> The general BET equation equals the simplified form: </p>
+<div class="displaymath" id="a0000000031">
+  \[ \text{BET} = \text{BET}_{\text{simplified}} \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#thm:bet_derivation">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/BET_derivation">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:bet_series_equiv_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:bet_series_equiv" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.9.2</span><span class="theorem_thmtitle">BET Series Equivalence</span></div>
+    <div class="thm_thmcontent"><p>    Under standard convergence conditions (\(|x| {\lt} 1\) and positive parameters), the general BET equation equals the series form: </p>
+<div class="displaymath" id="a0000000033">
+  \[ \text{BET} = \text{BET}_{\text{series}} \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#thm:bet_series_equiv">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://yourusername.github.io/formal/docs//find/#doc/BET_series_equivalence">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+</div>
+</div> <!-- content -->
+</div> <!-- wrapper -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+
+<script src="js/d3.min.js"></script>
+<script src="js/hpcc.min.js"></script>
+<script src="js/d3-graphviz.js"></script>
+
+<script type="text/javascript">
+const graphContainer = d3.select("#graph");
+const width = graphContainer.node().clientWidth;
+const height = graphContainer.node().clientHeight;
+
+
+graphContainer.graphviz({useWorker: true})
+    .width(width)
+    .height(height)
+    .fit(true)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"def:C_L"	[color=green,		fillcolor="#B0ECA3",		label=C_L,		shape=box,		style=filled];	"def:x"	[color=green,		fillcolor="#B0ECA3",		label=x,		shape=box,		style=filled];	"def:C_L" -> "def:x"	[style=dashed];	"def:C"	[color=green,		fillcolor="#B0ECA3",		label=C,		shape=box,		style=filled];	"def:x" -> "def:C"	[style=dashed];	"def:V"	[color=green,		fillcolor="#B0ECA3",		label=V,		shape=box,		style=filled];	"def:C" -> "def:V"	[style=dashed];	"def:bet_series"	[color=green,		fillcolor="#B0ECA3",		label=bet_series,		shape=box,		style=filled];	"def:C" -> "def:bet_series"	[style=dashed];	"def:s_i"	[color=green,		fillcolor="#B0ECA3",		label=s_i,		shape=box,		style=filled];	"def:C" -> "def:s_i"	[style=dashed];	"def:A"	[color=green,		fillcolor="#B0ECA3",		label=A,		shape=box,		style=filled];	"def:C" -> "def:A"	[style=dashed];	"def:bet_simplified"	[color=green,		fillcolor="#B0ECA3",		label=bet_simplified,		shape=box,		style=filled];	"def:C" -> "def:bet_simplified"	[style=dashed];	"thm:bet_derivation"	[color=blue,		fillcolor="#A3D6FF",		label=bet_derivation,		shape=ellipse,		style=filled];	"def:bet_equation"	[color=green,		fillcolor="#B0ECA3",		label=bet_equation,		shape=box,		style=filled];	"def:V" -> "def:bet_equation"	[style=dashed];	"def:bet_equation" -> "thm:bet_derivation"	[style=dashed];	"thm:bet_series_equiv"	[color=blue,		fillcolor="#1CAC78",		label=bet_series_equiv,		shape=ellipse,		style=filled];	"def:bet_equation" -> "thm:bet_series_equiv"	[style=dashed];	"def:bet_series" -> "thm:bet_series_equiv"	[style=dashed];	"def:A" -> "def:bet_equation"	[style=dashed];	"def:bet_simplified" -> "thm:bet_derivation"	[style=dashed];	"def:y"	[color=green,		fillcolor="#B0ECA3",		label=y,		shape=box,		style=filled];	"def:y" -> "def:C"	[style=dashed];	"lem:weighted_geometric"	[color=green,		fillcolor="#1CAC78",		label=weighted_geometric,		shape=ellipse,		style=filled];	"lem:bet_main_math"	[color=green,		fillcolor="#1CAC78",		label=bet_main_math,		shape=ellipse,		style=filled];	"lem:weighted_geometric" -> "lem:bet_main_math"	[style=dashed];	"lem:bet_main_math" -> "thm:bet_derivation";	"def:bet_parameters"	[color=green,		fillcolor="#B0ECA3",		label=bet_parameters,		shape=box,		style=filled];	"def:bet_parameters" -> "def:C_L"	[style=dashed];	"def:C_1"	[color=green,		fillcolor="#B0ECA3",		label=C_1,		shape=box,		style=filled];	"def:bet_parameters" -> "def:C_1"	[style=dashed];	"def:C_1" -> "def:y"	[style=dashed];	"lem:geometric_summable"	[color=green,		fillcolor="#1CAC78",		label=geometric_summable,		shape=ellipse,		style=filled];	"lem:geometric_summable" -> "lem:weighted_geometric"	[style=dashed];	"lem:simple_geometric"	[color=green,		fillcolor="#1CAC78",		label=simple_geometric,		shape=ellipse,		style=filled];	"lem:geometric_summable" -> "lem:simple_geometric"	[style=dashed];	"lem:simple_geometric" -> "lem:bet_main_math"	[style=dashed];}`)
+    .on("end", interactive);
+
+latexLabelEscaper = function(label) {
+  return label.replace(/\./g, '\\.').replace(/:/g, '\\:')
+}
+
+clickNode = function() {
+  $("#statements div").hide()
+  var node_id = $('text', this).text();
+  $('.thm').hide();
+  $('#'+latexLabelEscaper(node_id)).show().children().show();
+}
+function interactive() {
+    $("span#legend_title").on("click", function () {
+           $(this).siblings('dl').toggle();
+        })
+
+    d3.selectAll('.node')
+        .attr('pointer-events', 'fill')
+        .on('click', function () {
+           var title = d3.select(this).selectAll('title').text().trim();
+           $('#statements > div').hide()
+           $('.thm').hide();
+           $('#'+latexLabelEscaper(title)+'_modal').show().children().show().children().show();
+           $('#statements').show()
+        });
+
+    d3.selectAll('.dep-closebtn').on('click', function() {
+        var modal =
+            d3.select(this).node().parentNode.parentNode.parentNode ;
+        d3.select(modal).style('display', 'none');
+    });
+}
+
+</script>
+
+</body>
+</html>

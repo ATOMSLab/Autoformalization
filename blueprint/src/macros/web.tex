@@ -1,0 +1,13 @@
+% Web-specific macros
+
+% Configure blueprint package with theorem environments
+\usepackage[thms=definition+lemma+proposition+theorem+corollary]{blueprint}
+
+% Define theorem environments (web version)
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+
+% Any web-specific styling
