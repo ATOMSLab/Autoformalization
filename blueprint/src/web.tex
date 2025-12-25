@@ -1,0 +1,41 @@
+\documentclass{report}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+
+% CRITICAL: Load blueprint with theorem environments specified
+\usepackage[thms=definition+lemma+proposition+theorem+corollary]{blueprint}
+
+% Define theorem environments AFTER loading blueprint
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Project URLs (update these!)
+\home{https://github.com/yourusername/formal}
+\github{https://github.com/yourusername/formal}
+\dochome{https://yourusername.github.io/formal/docs/}
+
+% Load custom macros
+\input{macros/common}
+\input{macros/web}
+
+\title{BET theory of multilayer adsorption}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\input{content}
+
+\end{document}

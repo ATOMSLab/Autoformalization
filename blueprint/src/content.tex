@@ -1,0 +1,231 @@
+\chapter{BET Multilayer Adsorption Theory}
+
+\section{Introduction}
+We formalize the Brunauer-Emmett-Teller (BET) theory for multilayer gas adsorption on solid surfaces, deriving the BET equation which extends Langmuir's single-layer model to multiple adsorption layers.
+
+\section{Physical Constants and Parameters}
+
+\begin{definition}[BET System Parameters]
+\label{def:bet_parameters}
+\lean{BET_parameters}
+\leanok
+A BET system is characterized by:
+\begin{itemize}
+\item $s_0$ -- surface area of zeroth layer (positive)
+\item $E_1$ -- activation energy for first layer adsorption
+\item $E_L$ -- activation energy for subsequent layers
+\item $R$ -- universal gas constant (positive)
+\item $T$ -- absolute temperature (positive)
+\item $a_1, b_1, g$ -- fitted constants (positive)
+\item $P$ -- pressure (positive)
+\item $P_0$ -- saturation pressure (positive)
+\item $V_0$ -- monolayer volume (positive)
+\end{itemize}
+\end{definition}
+
+\section{Derived Constants}
+
+\begin{definition}[Liquid Phase Constant]
+\label{def:C_L}
+\lean{C_L}
+\leanok
+\uses{def:bet_parameters}
+The liquid phase constant is:
+$$C_L = \frac{\exp(E_L / (RT))}{g}$$
+\end{definition}
+
+\begin{definition}[First Layer Constant]
+\label{def:C_1}
+\lean{C₁}
+\leanok
+\uses{def:bet_parameters}
+The first layer equilibrium constant is:
+$$C_1 = \frac{a_1}{b_1} \exp(E_1 / (RT))$$
+\end{definition}
+
+\section{BET Parameters}
+
+\begin{definition}[Dimensionless Pressure x]
+\label{def:x}
+\lean{x}
+\leanok
+\uses{def:bet_parameters, def:C_L}
+The dimensionless pressure parameter is:
+$$x = P \cdot C_L$$
+\end{definition}
+
+\begin{definition}[Dimensionless Pressure y]
+\label{def:y}
+\lean{y}
+\leanok
+\uses{def:bet_parameters, def:C_1}
+The first-layer dimensionless pressure is:
+$$y = P \cdot C_1$$
+\end{definition}
+
+\begin{definition}[BET C Parameter]
+\label{def:C}
+\lean{C}
+\leanok
+\uses{def:x, def:y}
+The BET constant relating first layer to subsequent layers is:
+$$C = \frac{y}{x} = \frac{C_1}{C_L}$$
+\end{definition}
+
+\section{Layer Structure}
+
+\begin{definition}[Surface Area of i-th Layer]
+\label{def:s_i}
+\lean{s_i}
+\leanok
+\uses{def:bet_parameters, def:C, def:x}
+The surface area of the $i$-th adsorption layer is:
+$$s_i = \begin{cases}
+s_0 & \text{if } i = 0 \\
+C \cdot x^i \cdot s_0 & \text{if } i \geq 1
+\end{cases}$$
+\end{definition}
+
+\begin{definition}[Total Catalyst Surface Area]
+\label{def:A}
+\lean{A}
+\leanok
+\uses{def:bet_parameters, def:C, def:x}
+The total catalyst surface area is:
+$$A = s_0 \left(1 + C \sum_{i=0}^{\infty} x^{i+1}\right)$$
+\end{definition}
+
+\begin{definition}[Volume Adsorbed]
+\label{def:V}
+\lean{V}
+\leanok
+\uses{def:bet_parameters, def:C, def:x}
+The total volume adsorbed is:
+$$V = C \cdot s_0 \cdot V_0 \sum_{i=0}^{\infty} (i+1) \cdot x^{i+1}$$
+\end{definition}
+
+\section{Auxiliary Mathematical Results}
+
+\begin{lemma}[Geometric Series Summability]
+\label{lem:geometric_summable}
+\lean{geometric_series_summable}
+\leanok
+For $|x| < 1$, the series $\sum_{n=0}^{\infty} x^{n+1}$ is summable.
+\end{lemma}
+
+\begin{proof}
+\leanok
+This follows from the standard geometric series convergence test with ratio $|x| < 1$.
+\end{proof}
+
+\begin{lemma}[Weighted Geometric Series]
+\label{lem:weighted_geometric}
+\lean{weighted_geometric_series}
+\leanok
+\uses{lem:geometric_summable}
+For $|x| < 1$:
+$$\sum_{n=0}^{\infty} (n+1) \cdot x^{n+1} = \frac{x}{(1-x)^2}$$
+\end{lemma}
+
+\begin{proof}
+\leanok
+\uses{lem:geometric_summable}
+This is the derivative of the geometric series formula. By differentiating $\sum_{n=0}^{\infty} x^n = \frac{1}{1-x}$ term-by-term and adjusting indices, we obtain the result.
+\end{proof}
+
+\begin{lemma}[Simple Geometric Series Sum]
+\label{lem:simple_geometric}
+\lean{simple_geometric_series}
+\leanok
+\uses{lem:geometric_summable}
+For $|x| < 1$:
+$$\sum_{n=0}^{\infty} x^{n+1} = \frac{x}{1-x}$$
+\end{lemma}
+
+\begin{proof}
+\leanok
+\uses{lem:geometric_summable}
+Factor out $x$ from the standard geometric series formula.
+\end{proof}
+
+\section{BET Equation Forms}
+
+\begin{definition}[BET Equation (General Form)]
+\label{def:bet_equation}
+\lean{BET_equation}
+\leanok
+\uses{def:V, def:A}
+The BET equation in its general form is:
+$$\text{BET} = \frac{V}{A \cdot V_0}$$
+\end{definition}
+
+\begin{definition}[BET Equation (Simplified Form)]
+\label{def:bet_simplified}
+\lean{BET_simplified}
+\leanok
+\uses{def:C, def:bet_parameters}
+The simplified BET equation is:
+$$\text{BET}_{\text{simplified}} = \frac{C \cdot P}{(P_0 - P)(1 + (C-1) \cdot P/P_0)}$$
+\end{definition}
+
+\begin{definition}[BET Equation (Series Form)]
+\label{def:bet_series}
+\lean{BET_series_form}
+\leanok
+\uses{def:C, def:x}
+The BET equation in series form is:
+$$\text{BET}_{\text{series}} = \frac{C \cdot s_0 \sum_{i=0}^{\infty} (i+1) \cdot x^{i+1}}{s_0(1 + C \sum_{i=0}^{\infty} x^{i+1})}$$
+\end{definition}
+
+\section{Main Mathematical Identity}
+
+\begin{lemma}[BET Main Mathematical Identity]
+\label{lem:bet_main_math}
+\lean{BET_main_math}
+\leanok
+\uses{lem:weighted_geometric, lem:simple_geometric}
+For $|x| < 1$ and $C > 0$:
+$$\frac{C \sum_{i=0}^{\infty} (i+1) \cdot x^{i+1}}{1 + C \sum_{i=0}^{\infty} x^{i+1}} = \frac{C \cdot x}{(1-x)(1-x+Cx)}$$
+\end{lemma}
+
+\begin{proof}
+\leanok
+\uses{lem:weighted_geometric, lem:simple_geometric}
+Substitute the explicit formulas from the weighted and simple geometric series lemmas, then simplify algebraically.
+\end{proof}
+
+\section{Main Theorems}
+
+\begin{theorem}[BET Derivation]
+\label{thm:bet_derivation}
+\lean{BET_derivation}
+\uses{def:bet_equation, def:bet_simplified, def:C_L}
+Under the conditions:
+\begin{itemize}
+\item All physical parameters positive
+\item $P < P_0$ (pressure below saturation)
+\item $|x| < 1$ (convergence condition)
+\item $P_0 = 1/C_L$ (saturation pressure relation)
+\end{itemize}
+The general BET equation equals the simplified form:
+$$\text{BET} = \text{BET}_{\text{simplified}}$$
+\end{theorem}
+
+\begin{proof}
+\uses{lem:bet_main_math, def:V, def:A, def:x}
+Expand the definitions of $V$ and $A$, apply the geometric series formulas from the main mathematical identity, and simplify using the saturation pressure relation.
+\end{proof}
+
+\begin{theorem}[BET Series Equivalence]
+\label{thm:bet_series_equiv}
+\lean{BET_series_equivalence}
+\uses{def:bet_equation, def:bet_series}
+Under standard convergence conditions ($|x| < 1$ and positive parameters), the general BET equation equals the series form:
+$$\text{BET} = \text{BET}_{\text{series}}$$
+\end{theorem}
+
+\begin{proof}
+\leanok
+\uses{def:V, def:A, def:C, def:x}
+Direct substitution of definitions and algebraic simplification.
+\end{proof}
