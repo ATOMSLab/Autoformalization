@@ -137,7 +137,7 @@ theorem boltzmann_distribution_derivation_failed {w : ℕ} [NeZero w]
     (hp_pos : ∀ i, 0 < p i)
     (hp_normalized : ∑ i, p i = 1)
     (hp_functional : ∀ a b : Fin w, ∀ (hab : (a : ℕ) + b < w),
-      p a * p b = p ⟨0, NeZero.pos w⟩ * p ⟨(a : ℕ) + b, hab⟩) :
+    p a * p b = p ⟨0, NeZero.pos w⟩ * p ⟨(a : ℕ) + b, hab⟩) :
     ∃ β : ℝ, ∀ i, p i = boltzmannProb levels β i := by
   sorry
 

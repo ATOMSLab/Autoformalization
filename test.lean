@@ -66,3 +66,4 @@ def ExponentialFunctionalEq (f : ℝ → ℝ) : Prop :=
 lemma exponential_from_functional_eq {f : ℝ → ℝ} (hf : ExponentialFunctionalEq f)
     (hf_pos : ∀ x, 0 < f x) (hf_cont : Continuous f) :
     ∃ c : ℝ, ∀ x, f x = f 0 * Real.exp (c * x) := by sorry
+
