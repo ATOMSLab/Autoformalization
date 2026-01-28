@@ -18,7 +18,6 @@ macro "negate_state" : tactic => `(tactic|
     try (push_neg; guard_goal_nums 1)
   )
 )
-
 /-!
 # Boltzmann Distribution Derivation
 

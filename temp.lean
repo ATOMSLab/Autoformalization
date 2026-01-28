@@ -1,68 +1,49 @@
 import Mathlib
-open Lean Meta Elab Tactic in
-elab "revert_all" : tactic => do
-  let goals ← getGoals
-  let mut newGoals : List MVarId := []
-  for mvarId in goals do
-    newGoals := newGoals.append [(← mvarId.revertAll)]
-  setGoals newGoals
-
-open Lean.Elab.Tactic in
-macro "negate_state" : tactic => `(tactic|
-  (
-    guard_goal_nums 1
-    revert_all
-    refine @(((by admit) : ∀ {p : Prop}, ¬p → p) ?_)
-    try (push_neg; guard_goal_nums 1)
-  )
-)
 
 /-!
-# Boltzmann Distribution Derivation
+# Ideal Gas Law Derivation - Helmholtz Free Energy from Canonical Ensemble
 
-This file formalizes the derivation of the Boltzmann distribution from the
-fundamental postulate of statistical mechanics.
+This file formalizes the derivation of the Helmholtz free energy for an ideal gas
+starting from the canonical ensemble partition function.
+
+## Main results
+- `IdealGas.partitionFunction`: The partition function Z for an ideal gas
+- `IdealGas.helmholtzFreeEnergy`: The Helmholtz free energy A = -k_B T ln Z
+- `IdealGas.helmholtzFreeEnergy_eq`: The simplified form of Helmholtz free energy (Eq. 7)
 -/
+open Real
 
-open Real BigOperators
 
-/-- Energy levels are indexed by a finite type with at least one element -/
-structure EnergyLevels (w : ℕ) [NeZero w] where
-  ε : Fin w → ℝ
-  ε_nonneg : ∀ i, 0 ≤ ε i
-  ε_zero : ε ⟨0, NeZero.pos w⟩ = 0
+/-! ## Physical Constants and Parameters -/
 
-/-- A probability distribution over energy levels -/
-structure ProbDist (w : ℕ) where
-  p : Fin w → ℝ
-  p_nonneg : ∀ i, 0 ≤ p i
-  p_sum_one : ∑ i, p i = 1
+/-- Structure containing the physical parameters for an ideal gas system -/
+structure IdealGasParams where
+  k_B : ℝ  -- Boltzmann constant
+  h : ℝ    -- Planck's constant
+  m : ℝ    -- particle mass
+  T : ℝ    -- temperature
+  V : ℝ    -- volume
+  N : ℕ    -- number of particles
+  hk_B_pos : 0 < k_B
+  hh_pos : 0 < h
+  hm_pos : 0 < m
+  hT_pos : 0 < T
+  hV_pos : 0 < V
+  hN_pos : 0 < N
 
-/-- The partition function Z = Σᵢ exp(-β·εᵢ) -/
-noncomputable def partitionFunction {w : ℕ} [NeZero w] (levels : EnergyLevels w) (β : ℝ) : ℝ :=
-  ∑ i, Real.exp (-β * levels.ε i)
+variable (p : IdealGasParams)
 
-/-- The Boltzmann distribution: pᵢ = (1/Z)·exp(-β·εᵢ) -/
-noncomputable def boltzmannProb {w : ℕ} [NeZero w] (levels : EnergyLevels w) (β : ℝ) (i : Fin w) : ℝ :=
-  Real.exp (-β * levels.ε i) / partitionFunction levels β
+/-! ## Section 1: Partition Function Definition -/
 
-/-- Gibbs entropy: S = -Σᵢ pᵢ·ln(pᵢ) -/
-noncomputable def gibbsEntropy {w : ℕ} (dist : ProbDist w) : ℝ :=
-  -∑ i, dist.p i * Real.log (dist.p i)
+/--
+"The partition function for an ideal gas:
+Z = V^N / (N! h^{3N}) (2π m k_B T)^{3N/2}"
+(Equation 1)
+-/
+noncomputable def partitionFunction : ℝ :=
+  (p.V ^ p.N) / (Nat.factorial p.N * p.h ^ (3 * p.N)) *
+  (2 * π * p.m * p.k_B * p.T) ^ ((3 * p.N : ℕ) / 2 : ℝ)
 
-/-- Internal energy: U = Σᵢ pᵢ·εᵢ -/
-noncomputable def internalEnergy {w : ℕ} [NeZero w] (levels : EnergyLevels w) (dist : ProbDist w) : ℝ :=
-  ∑ i, dist.p i * levels.ε i
-
-/-- Free energy (Helmholtz): F = -T·ln(Z) -/
-noncomputable def freeEnergy {w : ℕ} [NeZero w] (levels : EnergyLevels w) (T : ℝ) : ℝ :=
-  -T * Real.log (partitionFunction levels (1/T))
-
-/-- The fundamental functional equation characterizing exponential distributions -/
-def ExponentialFunctionalEq (f : ℝ → ℝ) : Prop :=
-  ∀ a b, f a * f b = f 0 * f (a + b)
-
-/-- Lemma: The functional equation f(a)·f(b) = f(0)·f(a+b) implies f is exponential -/
-lemma exponential_from_functional_eq {f : ℝ → ℝ} (hf : ExponentialFunctionalEq f)
-    (hf_pos : ∀ x, 0 < f x) (hf_cont : Continuous f) :
-    ∃ c : ℝ, ∀ x, f x = f 0 * Real.exp (c * x) := by sorry
+/-- The partition function is positive for valid physical parameters -/
+theorem partitionFunction_pos : 0 < partitionFunction p := by
+  sorry

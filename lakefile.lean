@@ -14,3 +14,6 @@ require mathlib from git
 @[default_target]
 lean_lib «Formal» where
   -- add any library configuration options here
+
+require checkdecls from git "https://github.com/PatrickMassot/checkdecls.git"
+require repl from git "https://github.com/leanprover-community/repl.git"
