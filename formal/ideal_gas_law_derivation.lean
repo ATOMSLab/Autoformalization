@@ -201,7 +201,7 @@ theorem helmholtzFreeEnergy_final_form' :
 /-
 Alternative form emphasizing the thermal wavelength
 -/
-theorem helmholtzFreeEnergy_final_form'_final :
+theorem helmholtzFreeEnergy_final_form'_negated :
     helmholtzFreeEnergy p =
     -p.N * p.k_B * p.T * (log (p.V / p.N) + 1 +
       (3 : ℝ) / 2 * log (1 / thermalWavelengthSqFactor p)) := by

@@ -17,3 +17,4 @@ lean_lib «Formal» where
 
 require checkdecls from git "https://github.com/PatrickMassot/checkdecls.git"
 require repl from git "https://github.com/leanprover-community/repl.git"
+require "doc-gen4" from git "https://github.com/leanprover/doc-gen4" @ "main"

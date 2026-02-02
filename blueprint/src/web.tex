@@ -1,0 +1,39 @@
+\documentclass{report}
+\usepackage{depgraph}
+\usepackage{amssymb, amsthm, amsmath}
+\usepackage{hyperref}
+
+
+% CRITICAL: Load blueprint with theorem environments specified
+\usepackage[thms=definition+lemma+proposition+theorem+corollary]{blueprint}
+
+% Define theorem environments AFTER loading blueprint
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+
+
+\home{https://ATOMSLab.github.io/Autoformalization}
+\github{https://github.com/ATOMSLab/Autoformalization.git}
+\dochome{https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean}
+
+\input{macros/common}
+\input{macros/web}
+
+\title{ideal gas law}
+\author{Kevin Ishimwe}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\input{content}
+\end{document}
+

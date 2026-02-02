@@ -1,0 +1,262 @@
+\chapter{Derivation of the ideal gas law using Helmholtz equation of state – Canonical Ensemble}
+\section{Physical Constants and Parameters}
+
+\begin{definition}[Ideal Gas Parameters]
+\label{def:IdealGasParams}
+\lean{IdealGasParams}
+\leanok
+A structure containing the physical parameters for an ideal gas system:
+\begin{itemize}
+\item $k_B$: Boltzmann constant
+\item $h$: Planck's constant  
+\item $m$: particle mass
+\item $T$: temperature
+\item $V$: volume
+\item $N$: number of particles
+\end{itemize}
+with positivity conditions ensuring all parameters are physically meaningful: $k_B > 0$, $h > 0$, $m > 0$, $T > 0$, $V > 0$, $N > 0$.
+\end{definition}
+
+\section{Partition Function}
+
+\begin{definition}[Partition Function]
+\label{def:partitionFunction}
+\lean{partitionFunction}
+\leanok
+\uses{def:IdealGasParams}
+The partition function for an ideal gas is given by
+\[
+Z = \frac{V^N}{N! h^{3N}} (2\pi m k_B T)^{3N/2}
+\]
+This encodes the statistical mechanical properties of the system.
+\end{definition}
+
+\begin{theorem}[Positivity of Partition Function]
+\label{def:partitionFunction_pos}
+\lean{partitionFunction_pos}
+\leanok
+\uses{def:partitionFunction}
+The partition function is positive for valid physical parameters: $Z > 0$.
+\end{theorem}
+
+\begin{proof}
+\uses{def:IdealGasParams, def:partitionFunction}
+This follows from the positivity of all physical parameters.
+\end{proof}
+
+\section{Helmholtz Free Energy}
+
+\begin{definition}[Helmholtz Free Energy Definition]
+\label{def:helmholtzFreeEnergy_def}
+\lean{helmholtzFreeEnergy_def}
+\leanok
+\uses{def:IdealGasParams}
+The Helmholtz free energy $A$ is defined as a function of the partition function from thermodynamic relationships:
+\[
+A = -k_B T \ln Z
+\]
+where $Z > 0$ is the partition function.
+\end{definition}
+
+\begin{definition}[Helmholtz Free Energy for Ideal Gas]
+\label{def:helmholtzFreeEnergy}
+\lean{helmholtzFreeEnergy}
+\leanok
+\uses{def:helmholtzFreeEnergy_def, def:partitionFunction, def:partitionFunction_pos}
+The Helmholtz free energy for an ideal gas, obtained by applying the general definition to the ideal gas partition function.
+\end{definition}
+
+\section{Stirling's Approximation}
+
+\begin{definition}[Stirling's Approximation]
+\label{def:stirlingApprox}
+\lean{stirlingApprox}
+\leanok
+Stirling's approximation for the logarithm of factorials:
+\[
+\ln N! \approx N \ln N - N
+\]
+This approximation is valid for large $N$.
+\end{definition}
+
+\begin{theorem}[Stirling's Approximation Asymptotic]
+\label{def:stirling_approximation_asymptotic}
+\lean{stirling_approximation_asymptotic}
+\uses{def:stirlingApprox}
+\leanok
+For large $N > 0$, there exists an error term such that:
+\[
+\ln(N!) = N \ln N - N + \text{error}
+\]
+where the error term vanishes asymptotically.
+\end{theorem}
+
+\begin{proof}
+\uses{def:stirlingApprox}
+
+Standard asymptotic analysis of the factorial function.
+\end{proof}
+
+\section{Derivation of Helmholtz Free Energy Formula}
+
+\begin{theorem}[Helmholtz Free Energy Step 1]
+\label{def:helmholtz_eq_3}
+\lean{helmholtz_eq_3}
+\leanok
+\uses{def:helmholtzFreeEnergy}
+Substituting the expression for the partition function (Equation 1) into the definition of Helmholtz free energy (Equation 2):
+\[
+A = -k_B T \ln\left[\frac{V^N}{N! h^{3N}} (2\pi m k_B T)^{3N/2}\right]
+\]
+\end{theorem}
+
+\begin{proof}
+\uses{def:helmholtzFreeEnergy_def, def:partitionFunction, def:IdealGasParams}
+Direct substitution of the partition function into the Helmholtz free energy definition.
+\end{proof}
+
+\begin{theorem}[Helmholtz Free Energy Step 2]
+\label{def:helmholtz_eq_4}
+\lean{helmholtz_eq_4}
+\leanok
+\uses{def:helmholtzFreeEnergy}
+\defined
+Expanding the logarithm using $\ln(ab) = \ln a + \ln b$:
+\[
+A = -k_B T \left[\ln\left(\frac{V^N}{N! h^{3N}}\right) + \frac{3N}{2} \ln(2\pi m k_B T)\right]
+\]
+\end{theorem}
+
+\begin{proof}
+\uses{def:helmholtz_eq_3, def:IdealGasParams}
+Apply logarithm properties to separate the product.
+\end{proof}
+
+\begin{theorem}[Helmholtz Free Energy Step 3]
+\label{def:helmholtz_eq_5}
+\lean{helmholtz_eq_5}
+\leanok
+\uses{def:helmholtzFreeEnergy}
+Further expanding using logarithm properties $\ln(a/b) = \ln a - \ln b$ and $\ln(a^n) = n\ln a$:
+\[
+A = -k_B T \left[N \ln V - \ln N! - 3N \ln h + \frac{3N}{2} \ln(2\pi m k_B T)\right]
+\]
+\end{theorem}
+
+\begin{proof}
+\uses{def:helmholtz_eq_4, def:IdealGasParams}
+Apply logarithm rules to expand the fraction and powers.
+\end{proof}
+
+\begin{theorem}[Helmholtz Free Energy with Stirling]
+\label{def:helmholtz_eq_6_stirling}
+\lean{helmholtz_eq_6_stirling}
+\leanok
+\uses{def:IdealGasParams}
+Applying Stirling's approximation $\ln N! = N \ln N - N$:
+\[
+-k_B T \left[N \ln V - (N \ln N - N) - 3N \ln h + \frac{3N}{2} \ln(2\pi m k_B T)\right]
+= -k_B T \left[N \ln\left(\frac{V}{N}\right) + N - 3N \ln h + \frac{3N}{2} \ln(2\pi m k_B T)\right]
+\]
+\end{theorem}
+
+\begin{proof}
+\uses{def:stirlingApprox, def:IdealGasParams}
+Algebraic manipulation after substituting Stirling's approximation.
+\end{proof}
+
+\section{Main Results}
+
+\begin{definition}[Thermal Wavelength Factor]
+\label{def:thermalWavelengthSqFactor}
+\lean{thermalWavelengthSqFactor}
+\leanok
+\uses{def:IdealGasParams}
+The thermal de Broglie wavelength squared factor:
+\[
+\lambda_{\text{th}}^2 = \frac{h^2}{2\pi m k_B T}
+\]
+This is a fundamental quantum mechanical length scale at temperature $T$.
+\end{definition}
+
+\begin{theorem}[Helmholtz Free Energy Final Form]
+\label{def:helmholtzFreeEnergy_final_form}
+\lean{helmholtzFreeEnergy_final_form}
+\notready
+\uses{def:helmholtzFreeEnergy, def:thermalWavelengthSqFactor}
+The Helmholtz free energy for an ideal gas takes the Sackur-Tetrode form (Equation 7):
+\[
+A = -N k_B T \left[\ln\left(\frac{V}{N}\right) + 1 + \frac{3}{2} \ln\left(\frac{2\pi m k_B T}{h^2}\right)\right]
+\]
+This is the main result expressing the free energy in terms of the fundamental physical parameters.
+\end{theorem}
+
+\begin{proof}
+\uses{def:helmholtz_eq_3, def:helmholtz_eq_4, def:helmholtz_eq_5, def:helmholtz_eq_6_stirling, def:stirling_approximation_asymptotic, def:IdealGasParams}
+The result follows from the chain of algebraic simplifications starting from Equation 3 through Equation 6, combined with further algebraic manipulation to achieve the final form.
+\end{proof}
+
+\begin{theorem}[Helmholtz Free Energy Alternative Form]
+\label{def:helmholtzFreeEnergy_final_form'}
+\notready
+\lean{helmholtzFreeEnergy_final_form'}
+\uses{def:helmholtzFreeEnergy, def:thermalWavelengthSqFactor}
+The Helmholtz free energy can alternatively be written in terms of the thermal wavelength:
+\[
+A = -N k_B T \left[\ln\left(\frac{V}{N}\right) + 1 + \frac{3}{2} \ln\left(\frac{1}{\lambda_{\text{th}}^2}\right)\right]
+\]
+\end{theorem}
+
+\begin{proof}
+\uses{def:helmholtzFreeEnergy_final_form, def:thermalWavelengthSqFactor, def:IdealGasParams}
+Direct substitution of the definition of thermal wavelength factor into the final form.
+\end{proof}
+
+\begin{theorem}[Helmholtz Free Energy Alternative Form (Negated)]
+\label{def:helmholtzFreeEnergy_final_form'_negated}
+\lean{helmholtzFreeEnergy_final_form'_negated}
+\leanok
+\uses{def:helmholtzFreeEnergy, def:thermalWavelengthSqFactor}
+The Helmholtz free energy can alternatively be written emphasizing the thermal wavelength:
+\[
+A = -N k_B T \left[\ln\left(\frac{V}{N}\right) + 1 + \frac{3}{2} \ln\left(\frac{1}{\lambda_{\text{th}}^2}\right)\right]
+\]
+\end{theorem}
+
+\begin{proof}
+\uses{def:helmholtzFreeEnergy_final_form, def:thermalWavelengthSqFactor, def:IdealGasParams}
+\notready
+The proof involves algebraic manipulation and the use of logarithm properties, particularly $\log(a^b) = b \log a$, combined with normalization and ring simplification techniques.
+\end{proof}
+
+\section{Physical Consequences}
+
+\begin{theorem}[Extensivity of Helmholtz Free Energy]
+\label{def:helmholtz_extensive}
+\lean{helmholtz_extensive}
+\uses{def:IdealGasParams, def:helmholtzFreeEnergy}
+The Helmholtz free energy is extensive: for any positive constant $c > 0$, there exists a function $f$ such that
+\[
+A = N \cdot f
+\]
+That is, for fixed intensive variables (such as $V/N$ and $T$), the free energy scales linearly with the number of particles $N$.
+\end{theorem}
+
+\begin{proof}
+This follows from examining the final form and observing that $A$ can be factored as $N$ times a function of intensive variables.
+\end{proof}
+
+\begin{theorem}[Pressure from Helmholtz Free Energy]
+\label{def:pressure_from_helmholtz}
+\lean{pressure_from_helmholtz}
+\uses{def:IdealGasParams}
+The pressure can be obtained from the Helmholtz free energy via the thermodynamic relation $P = -\frac{\partial A}{\partial V}$ at constant $T$ and $N$. This yields:
+\[
+P = \frac{N k_B T}{V}
+\]
+which is the ideal gas law $PV = Nk_BT$.
+\end{theorem}
+
+\begin{proof}
+Differentiate the final form with respect to $V$ at constant $T$ and $N$.
+\end{proof}

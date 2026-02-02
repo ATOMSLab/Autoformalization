@@ -1,0 +1,701 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dependency graph</title>
+  <meta name="generator" content="plasTeX" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles/theme-white.css" />
+  <link rel="stylesheet" href="styles/dep_graph.css" />
+  
+  <script type="text/x-mathjax-config">
+  
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  
+  </script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">  </script>
+
+
+<link rel="stylesheet" href="styles/extra_styles.css" />
+
+</head>
+
+<body>
+<header>
+  <a class="toc" href="index.html">Home</a>
+  <h1 id="doc_title">Dependencies</h1>
+</header>
+<div class="wrapper">
+<div class="content">
+  <div id="Legend">
+    <span id="legend_title" class="title">Legend
+    <div class="btn">
+       <div class="bar"></div>
+       <div class="bar"></div>
+       <div class="bar"></div>
+    </div></span> 
+    <dl class="legend">
+      
+      <dt>Boxes</dt><dd>definitions</dd>
+      
+      <dt>Ellipses</dt><dd>theorems and lemmas</dd>
+      
+      <dt>lightgreen</dt><dd>Definitions</dd>
+      
+      <dt>lightblue</dt><dd>Lemmas</dd>
+      
+      <dt>lightyellow</dt><dd>Theorems</dd>
+      
+      <dt>Blue border</dt><dd>the <em>statement</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Orange border</dt><dd>the <em>statement</em> of this result is not ready to be formalized; the blueprint needs more work</dd>
+      
+      <dt>Blue background</dt><dd>the <em>proof</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Green border</dt><dd>the <em>statement</em> of this result is formalized</dd>
+      
+      <dt>Green background</dt><dd>the <em>proof</em> of this result is formalized</dd>
+      
+      <dt>Dark green background</dt><dd>the <em>proof</em> of this result and all its ancestors are formalized</dd>
+      
+      <dt>Dark green border</dt><dd>this is in Mathlib</dd>
+      
+    </dl>
+  </div>
+    <div id="graph"></div>
+<div id="statements">
+
+    
+    <div class="dep-modal-container" id="def:helmholtz_eq_3_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:helmholtz_eq_3" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.5.1</span><span class="theorem_thmtitle">Helmholtz Free Energy Step 1</span></div>
+    <div class="thm_thmcontent"><p>    Substituting the expression for the partition function (Equation 1) into the definition of Helmholtz free energy (Equation 2): </p>
+<div class="displaymath" id="a0000000015">
+  \[  A = -k_B T \ln \left[\frac{V^N}{N! h^{3N}} (2\pi m k_B T)^{3N/2}\right]  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:helmholtz_eq_3">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtz_eq_3">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:helmholtz_eq_4_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:helmholtz_eq_4" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.5.2</span><span class="theorem_thmtitle">Helmholtz Free Energy Step 2</span></div>
+    <div class="thm_thmcontent"><p>    Expanding the logarithm using \(\ln (ab) = \ln a + \ln b\): </p>
+<div class="displaymath" id="a0000000017">
+  \[  A = -k_B T \left[\ln \left(\frac{V^N}{N! h^{3N}}\right) + \frac{3N}{2} \ln (2\pi m k_B T)\right]  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:helmholtz_eq_4">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtz_eq_4">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:helmholtz_eq_5_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:helmholtz_eq_5" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.5.3</span><span class="theorem_thmtitle">Helmholtz Free Energy Step 3</span></div>
+    <div class="thm_thmcontent"><p>    Further expanding using logarithm properties \(\ln (a/b) = \ln a - \ln b\) and \(\ln (a^n) = n\ln a\): </p>
+<div class="displaymath" id="a0000000019">
+  \[  A = -k_B T \left[N \ln V - \ln N! - 3N \ln h + \frac{3N}{2} \ln (2\pi m k_B T)\right]  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:helmholtz_eq_5">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtz_eq_5">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:helmholtz_eq_6_stirling_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:helmholtz_eq_6_stirling" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.5.4</span><span class="theorem_thmtitle">Helmholtz Free Energy with Stirling</span></div>
+    <div class="thm_thmcontent"><p>    Applying Stirling’s approximation \(\ln N! = N \ln N - N\): </p>
+<div class="displaymath" id="a0000000021">
+  \[  -k_B T \left[N \ln V - (N \ln N - N) - 3N \ln h + \frac{3N}{2} \ln (2\pi m k_B T)\right] = -k_B T \left[N \ln \left(\frac{V}{N}\right) + N - 3N \ln h + \frac{3N}{2} \ln (2\pi m k_B T)\right]  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:helmholtz_eq_6_stirling">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtz_eq_6_stirling">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:helmholtz_extensive_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:helmholtz_extensive" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.7.1</span><span class="theorem_thmtitle">Extensivity of Helmholtz Free Energy</span></div>
+    <div class="thm_thmcontent"><p>    The Helmholtz free energy is extensive: for any positive constant \(c {\gt} 0\), there exists a function \(f\) such that </p>
+<div class="displaymath" id="a0000000032">
+  \[  A = N \cdot f  \]
+</div>
+<p> That is, for fixed intensive variables (such as \(V/N\) and \(T\)), the free energy scales linearly with the number of particles \(N\). </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:helmholtz_extensive">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtz_extensive">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:helmholtzFreeEnergy_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:helmholtzFreeEnergy" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.3.2</span><span class="definition_thmtitle">Helmholtz Free Energy for Ideal Gas</span></div>
+    <div class="thm_thmcontent"><p>    The Helmholtz free energy for an ideal gas, obtained by applying the general definition to the ideal gas partition function. </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:helmholtzFreeEnergy">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtzFreeEnergy">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:helmholtzFreeEnergy_def_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:helmholtzFreeEnergy_def" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.3.1</span><span class="definition_thmtitle">Helmholtz Free Energy Definition</span></div>
+    <div class="thm_thmcontent"><p>    The Helmholtz free energy \(A\) is defined as a function of the partition function from thermodynamic relationships: </p>
+<div class="displaymath" id="a0000000008">
+  \[  A = -k_B T \ln Z  \]
+</div>
+<p> where \(Z {\gt} 0\) is the partition function. </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:helmholtzFreeEnergy_def">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtzFreeEnergy_def">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:helmholtzFreeEnergy_final_form_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:helmholtzFreeEnergy_final_form" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.6.2</span><span class="theorem_thmtitle">Helmholtz Free Energy Final Form</span></div>
+    <div class="thm_thmcontent"><p>    The Helmholtz free energy for an ideal gas takes the Sackur-Tetrode form (Equation 7): </p>
+<div class="displaymath" id="a0000000025">
+  \[  A = -N k_B T \left[\ln \left(\frac{V}{N}\right) + 1 + \frac{3}{2} \ln \left(\frac{2\pi m k_B T}{h^2}\right)\right]  \]
+</div>
+<p> This is the main result expressing the free energy in terms of the fundamental physical parameters. </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:helmholtzFreeEnergy_final_form">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtzFreeEnergy_final_form">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:helmholtzFreeEnergy_final_form'_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:helmholtzFreeEnergy_final_form'" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.6.3</span><span class="theorem_thmtitle">Helmholtz Free Energy Alternative Form</span></div>
+    <div class="thm_thmcontent"><p>    The Helmholtz free energy can alternatively be written in terms of the thermal wavelength: </p>
+<div class="displaymath" id="a0000000027">
+  \[  A = -N k_B T \left[\ln \left(\frac{V}{N}\right) + 1 + \frac{3}{2} \ln \left(\frac{1}{\lambda _{\text{th}}^2}\right)\right]  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:helmholtzFreeEnergy_final_form'">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtzFreeEnergy_final_form'">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:helmholtzFreeEnergy_final_form'_negated_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:helmholtzFreeEnergy_final_form'_negated" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.6.4</span><span class="theorem_thmtitle">Helmholtz Free Energy Alternative Form (Negated)</span></div>
+    <div class="thm_thmcontent"><p>    The Helmholtz free energy can alternatively be written emphasizing the thermal wavelength: </p>
+<div class="displaymath" id="a0000000029">
+  \[  A = -N k_B T \left[\ln \left(\frac{V}{N}\right) + 1 + \frac{3}{2} \ln \left(\frac{1}{\lambda _{\text{th}}^2}\right)\right]  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:helmholtzFreeEnergy_final_form'_negated">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtzFreeEnergy_final_form'_negated">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:IdealGasParams_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:IdealGasParams" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.1.1</span><span class="definition_thmtitle">Ideal Gas Parameters</span></div>
+    <div class="thm_thmcontent"><p>   A structure containing the physical parameters for an ideal gas system: </p>
+<ul class="itemize">
+  <li><p>\(k_B\): Boltzmann constant </p>
+</li>
+  <li><p>\(h\): Planck’s constant </p>
+</li>
+  <li><p>\(m\): particle mass </p>
+</li>
+  <li><p>\(T\): temperature </p>
+</li>
+  <li><p>\(V\): volume </p>
+</li>
+  <li><p>\(N\): number of particles </p>
+</li>
+</ul>
+<p> with positivity conditions ensuring all parameters are physically meaningful: \(k_B {\gt} 0\), \(h {\gt} 0\), \(m {\gt} 0\), \(T {\gt} 0\), \(V {\gt} 0\), \(N {\gt} 0\). </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:IdealGasParams">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/IdealGasParams">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:partitionFunction_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:partitionFunction" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.1</span><span class="definition_thmtitle">Partition Function</span></div>
+    <div class="thm_thmcontent"><p>    The partition function for an ideal gas is given by </p>
+<div class="displaymath" id="a0000000005">
+  \[  Z = \frac{V^N}{N! h^{3N}} (2\pi m k_B T)^{3N/2}  \]
+</div>
+<p> This encodes the statistical mechanical properties of the system. </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:partitionFunction">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/partitionFunction">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:partitionFunction_pos_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:partitionFunction_pos" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.2.2</span><span class="theorem_thmtitle">Positivity of Partition Function</span></div>
+    <div class="thm_thmcontent"><p>    The partition function is positive for valid physical parameters: \(Z {\gt} 0\). </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:partitionFunction_pos">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/partitionFunction_pos">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:pressure_from_helmholtz_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:pressure_from_helmholtz" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.7.2</span><span class="theorem_thmtitle">Pressure from Helmholtz Free Energy</span></div>
+    <div class="thm_thmcontent"><p>    The pressure can be obtained from the Helmholtz free energy via the thermodynamic relation \(P = -\frac{\partial A}{\partial V}\) at constant \(T\) and \(N\). This yields: </p>
+<div class="displaymath" id="a0000000034">
+  \[  P = \frac{N k_B T}{V}  \]
+</div>
+<p> which is the ideal gas law \(PV = Nk_BT\). </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:pressure_from_helmholtz">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/pressure_from_helmholtz">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:stirling_approximation_asymptotic_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:stirling_approximation_asymptotic" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.4.2</span><span class="theorem_thmtitle">Stirling’s Approximation Asymptotic</span></div>
+    <div class="thm_thmcontent"><p>    For large \(N {\gt} 0\), there exists an error term such that: </p>
+<div class="displaymath" id="a0000000012">
+  \[  \ln (N!) = N \ln N - N + \text{error}  \]
+</div>
+<p> where the error term vanishes asymptotically. </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:stirling_approximation_asymptotic">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/stirling_approximation_asymptotic">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:stirlingApprox_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:stirlingApprox" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.4.1</span><span class="definition_thmtitle">Stirling’s Approximation</span></div>
+    <div class="thm_thmcontent"><p>   Stirling’s approximation for the logarithm of factorials: </p>
+<div class="displaymath" id="a0000000010">
+  \[  \ln N! \approx N \ln N - N  \]
+</div>
+<p> This approximation is valid for large \(N\). </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:stirlingApprox">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/stirlingApprox">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:thermalWavelengthSqFactor_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:thermalWavelengthSqFactor" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.6.1</span><span class="definition_thmtitle">Thermal Wavelength Factor</span></div>
+    <div class="thm_thmcontent"><p>    The thermal de Broglie wavelength squared factor: </p>
+<div class="displaymath" id="a0000000023">
+  \[  \lambda _{\text{th}}^2 = \frac{h^2}{2\pi m k_B T}  \]
+</div>
+<p> This is a fundamental quantum mechanical length scale at temperature \(T\). </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:thermalWavelengthSqFactor">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/thermalWavelengthSqFactor">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+</div>
+</div> <!-- content -->
+</div> <!-- wrapper -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+
+<script src="js/d3.min.js"></script>
+<script src="js/hpcc.min.js"></script>
+<script src="js/d3-graphviz.js"></script>
+
+<script type="text/javascript">
+const graphContainer = d3.select("#graph");
+const width = graphContainer.node().clientWidth;
+const height = graphContainer.node().clientHeight;
+
+
+graphContainer.graphviz({useWorker: true})
+    .width(width)
+    .height(height)
+    .fit(true)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"def:helmholtzFreeEnergy_def"	[color=green,		fillcolor="#B0ECA3",		label=helmholtzFreeEnergy_def,		shape=box,		style=filled];	"def:helmholtzFreeEnergy"	[color=green,		fillcolor="#B0ECA3",		label=helmholtzFreeEnergy,		shape=box,		style=filled];	"def:helmholtzFreeEnergy_def" -> "def:helmholtzFreeEnergy"	[style=dashed];	"def:helmholtz_eq_3"	[color=green,		fillcolor="#A3D6FF",		label=helmholtz_eq_3,		shape=ellipse,		style=filled];	"def:helmholtzFreeEnergy" -> "def:helmholtz_eq_3"	[style=dashed];	"def:helmholtz_extensive"	[color=blue,		fillcolor="#A3D6FF",		label=helmholtz_extensive,		shape=ellipse,		style=filled];	"def:helmholtzFreeEnergy" -> "def:helmholtz_extensive"	[style=dashed];	"def:helmholtz_eq_4"	[color=green,		fillcolor="#A3D6FF",		label=helmholtz_eq_4,		shape=ellipse,		style=filled];	"def:helmholtz_eq_3" -> "def:helmholtz_eq_4";	"def:helmholtz_eq_5"	[color=green,		fillcolor="#A3D6FF",		label=helmholtz_eq_5,		shape=ellipse,		style=filled];	"def:helmholtz_eq_4" -> "def:helmholtz_eq_5";	"def:helmholtzFreeEnergy_final_form"	[color="#FFAA33",		label=helmholtzFreeEnergy_final_form,		shape=ellipse];	"def:helmholtzFreeEnergy_final_form'"	[color="#FFAA33",		label="helmholtzFreeEnergy_final_form'",		shape=ellipse];	"def:helmholtzFreeEnergy_final_form" -> "def:helmholtzFreeEnergy_final_form'";	"def:helmholtzFreeEnergy_final_form'_negated"	[color=green,		label="helmholtzFreeEnergy_final_form'_negated",		shape=ellipse];	"def:helmholtzFreeEnergy_final_form" -> "def:helmholtzFreeEnergy_final_form'_negated";	"def:helmholtz_eq_5" -> "def:helmholtzFreeEnergy_final_form";	"def:partitionFunction_pos"	[color=green,		fillcolor="#A3D6FF",		label=partitionFunction_pos,		shape=ellipse,		style=filled];	"def:partitionFunction_pos" -> "def:helmholtzFreeEnergy"	[style=dashed];	"def:stirling_approximation_asymptotic"	[color=green,		fillcolor="#A3D6FF",		label=stirling_approximation_asymptotic,		shape=ellipse,		style=filled];	"def:stirling_approximation_asymptotic" -> "def:helmholtzFreeEnergy_final_form";	"def:helmholtz_eq_6_stirling"	[color=green,		fillcolor="#A3D6FF",		label=helmholtz_eq_6_stirling,		shape=ellipse,		style=filled];	"def:helmholtz_eq_6_stirling" -> "def:helmholtzFreeEnergy_final_form";	"def:pressure_from_helmholtz"	[color=blue,		fillcolor="#A3D6FF",		label=pressure_from_helmholtz,		shape=ellipse,		style=filled];	"def:IdealGasParams"	[color=green,		fillcolor="#B0ECA3",		label=IdealGasParams,		shape=box,		style=filled];	"def:IdealGasParams" -> "def:helmholtzFreeEnergy_def"	[style=dashed];	"def:IdealGasParams" -> "def:helmholtz_eq_6_stirling"	[style=dashed];	"def:IdealGasParams" -> "def:pressure_from_helmholtz"	[style=dashed];	"def:partitionFunction"	[color=green,		fillcolor="#B0ECA3",		label=partitionFunction,		shape=box,		style=filled];	"def:IdealGasParams" -> "def:partitionFunction"	[style=dashed];	"def:thermalWavelengthSqFactor"	[color=green,		fillcolor="#B0ECA3",		label=thermalWavelengthSqFactor,		shape=box,		style=filled];	"def:IdealGasParams" -> "def:thermalWavelengthSqFactor"	[style=dashed];	"def:partitionFunction" -> "def:partitionFunction_pos"	[style=dashed];	"def:thermalWavelengthSqFactor" -> "def:helmholtzFreeEnergy_final_form"	[style=dashed];	"def:stirlingApprox"	[color=green,		fillcolor="#B0ECA3",		label=stirlingApprox,		shape=box,		style=filled];	"def:stirlingApprox" -> "def:stirling_approximation_asymptotic"	[style=dashed];	"def:stirlingApprox" -> "def:helmholtz_eq_6_stirling";}`)
+    .on("end", interactive);
+
+latexLabelEscaper = function(label) {
+  return label.replace(/\./g, '\\.').replace(/:/g, '\\:')
+}
+
+clickNode = function() {
+  $("#statements div").hide()
+  var node_id = $('text', this).text();
+  $('.thm').hide();
+  $('#'+latexLabelEscaper(node_id)).show().children().show();
+}
+function interactive() {
+    $("span#legend_title").on("click", function () {
+           $(this).siblings('dl').toggle();
+        })
+
+    d3.selectAll('.node')
+        .attr('pointer-events', 'fill')
+        .on('click', function () {
+           var title = d3.select(this).selectAll('title').text().trim();
+           $('#statements > div').hide()
+           $('.thm').hide();
+           $('#'+latexLabelEscaper(title)+'_modal').show().children().show().children().show();
+           $('#statements').show()
+        });
+
+    d3.selectAll('.dep-closebtn').on('click', function() {
+        var modal =
+            d3.select(this).node().parentNode.parentNode.parentNode ;
+        d3.select(modal).style('display', 'none');
+    });
+}
+
+</script>
+
+</body>
+</html>

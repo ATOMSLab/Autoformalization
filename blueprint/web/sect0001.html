@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Derivation of the ideal gas law using Helmholtz equation of state – Canonical Ensemble</title>
+<link rel="prev" href="index.html" title="ideal gas law" />
+<link rel="up" href="index.html" title="ideal gas law" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">ideal gas law</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active current">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Derivation of the ideal gas law using Helmholtz equation of state – Canonical Ensemble</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0001.html#a0000000003"><span class="toc_ref">1.1</span> <span class="toc_entry">Physical Constants and Parameters</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000004"><span class="toc_ref">1.2</span> <span class="toc_entry">Partition Function</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000007"><span class="toc_ref">1.3</span> <span class="toc_entry">Helmholtz Free Energy</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000009"><span class="toc_ref">1.4</span> <span class="toc_entry">Stirling’s Approximation</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000013"><span class="toc_ref">1.5</span> <span class="toc_entry">Derivation of Helmholtz Free Energy Formula</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000022"><span class="toc_ref">1.6</span> <span class="toc_entry">Main Results</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000030"><span class="toc_ref">1.7</span> <span class="toc_entry">Physical Consequences</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000002">1 Derivation of the ideal gas law using Helmholtz equation of state – Canonical Ensemble</h1>
+<h1 id="a0000000003">1.1 Physical Constants and Parameters</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:IdealGasParams">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.1.1</span>
+    <span class="definition_thmtitle">Ideal Gas Parameters</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:IdealGasParams">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/IdealGasParams" class="lean_decl">IdealGasParams</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   A structure containing the physical parameters for an ideal gas system: </p>
+<ul class="itemize">
+  <li><p>\(k_B\): Boltzmann constant </p>
+</li>
+  <li><p>\(h\): Planck’s constant </p>
+</li>
+  <li><p>\(m\): particle mass </p>
+</li>
+  <li><p>\(T\): temperature </p>
+</li>
+  <li><p>\(V\): volume </p>
+</li>
+  <li><p>\(N\): number of particles </p>
+</li>
+</ul>
+<p> with positivity conditions ensuring all parameters are physically meaningful: \(k_B {\gt} 0\), \(h {\gt} 0\), \(m {\gt} 0\), \(T {\gt} 0\), \(V {\gt} 0\), \(N {\gt} 0\). </p>
+
+  </div>
+</div>
+<h1 id="a0000000004">1.2 Partition Function</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:partitionFunction">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.1</span>
+    <span class="definition_thmtitle">Partition Function</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:partitionFunction">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/partitionFunction" class="lean_decl">partitionFunction</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>    The partition function for an ideal gas is given by </p>
+<div class="displaymath" id="a0000000005">
+  \[  Z = \frac{V^N}{N! h^{3N}} (2\pi m k_B T)^{3N/2}  \]
+</div>
+<p> This encodes the statistical mechanical properties of the system. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="def:partitionFunction_pos">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.2.2</span>
+    <span class="theorem_thmtitle">Positivity of Partition Function</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:partitionFunction_pos">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000006"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:partitionFunction">Definition 1.2.1</a></li>
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+          <li><a href="sect0001.html#def:partitionFunction">Definition 1.2.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/partitionFunction_pos" class="lean_decl">partitionFunction_pos</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    The partition function is positive for valid physical parameters: \(Z {\gt} 0\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000006">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> This follows from the positivity of all physical parameters. </p>
+
+  </div>
+</div>
+<h1 id="a0000000007">1.3 Helmholtz Free Energy</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:helmholtzFreeEnergy_def">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.3.1</span>
+    <span class="definition_thmtitle">Helmholtz Free Energy Definition</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:helmholtzFreeEnergy_def">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtzFreeEnergy_def" class="lean_decl">helmholtzFreeEnergy_def</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>    The Helmholtz free energy \(A\) is defined as a function of the partition function from thermodynamic relationships: </p>
+<div class="displaymath" id="a0000000008">
+  \[  A = -k_B T \ln Z  \]
+</div>
+<p> where \(Z {\gt} 0\) is the partition function. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:helmholtzFreeEnergy">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.3.2</span>
+    <span class="definition_thmtitle">Helmholtz Free Energy for Ideal Gas</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:helmholtzFreeEnergy">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:helmholtzFreeEnergy_def">Definition 1.3.1</a></li>
+          
+          <li><a href="sect0001.html#def:partitionFunction">Definition 1.2.1</a></li>
+          
+          <li><a href="sect0001.html#def:partitionFunction_pos">Theorem 1.2.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtzFreeEnergy" class="lean_decl">helmholtzFreeEnergy</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>    The Helmholtz free energy for an ideal gas, obtained by applying the general definition to the ideal gas partition function. </p>
+
+  </div>
+</div>
+<h1 id="a0000000009">1.4 Stirling’s Approximation</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:stirlingApprox">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.1</span>
+    <span class="definition_thmtitle">Stirling’s Approximation</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:stirlingApprox">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/stirlingApprox" class="lean_decl">stirlingApprox</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Stirling’s approximation for the logarithm of factorials: </p>
+<div class="displaymath" id="a0000000010">
+  \[  \ln N! \approx N \ln N - N  \]
+</div>
+<p> This approximation is valid for large \(N\). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="def:stirling_approximation_asymptotic">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.4.2</span>
+    <span class="theorem_thmtitle">Stirling’s Approximation Asymptotic</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:stirling_approximation_asymptotic">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000011"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:stirlingApprox">Definition 1.4.1</a></li>
+          
+          <li><a href="sect0001.html#def:stirlingApprox">Definition 1.4.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/stirling_approximation_asymptotic" class="lean_decl">stirling_approximation_asymptotic</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For large \(N {\gt} 0\), there exists an error term such that: </p>
+<div class="displaymath" id="a0000000012">
+  \[  \ln (N!) = N \ln N - N + \text{error}  \]
+</div>
+<p> where the error term vanishes asymptotically. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000011">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Standard asymptotic analysis of the factorial function. </p>
+
+  </div>
+</div>
+<h1 id="a0000000013">1.5 Derivation of Helmholtz Free Energy Formula</h1>
+<div class="theorem_thmwrapper theorem-style-plain" id="def:helmholtz_eq_3">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.5.1</span>
+    <span class="theorem_thmtitle">Helmholtz Free Energy Step 1</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:helmholtz_eq_3">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000014"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:helmholtzFreeEnergy">Definition 1.3.2</a></li>
+          
+          <li><a href="sect0001.html#def:helmholtzFreeEnergy_def">Definition 1.3.1</a></li>
+          
+          <li><a href="sect0001.html#def:partitionFunction">Definition 1.2.1</a></li>
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtz_eq_3" class="lean_decl">helmholtz_eq_3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    Substituting the expression for the partition function (Equation 1) into the definition of Helmholtz free energy (Equation 2): </p>
+<div class="displaymath" id="a0000000015">
+  \[  A = -k_B T \ln \left[\frac{V^N}{N! h^{3N}} (2\pi m k_B T)^{3N/2}\right]  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000014">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Direct substitution of the partition function into the Helmholtz free energy definition. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="def:helmholtz_eq_4">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.5.2</span>
+    <span class="theorem_thmtitle">Helmholtz Free Energy Step 2</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:helmholtz_eq_4">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000016"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:helmholtzFreeEnergy">Definition 1.3.2</a></li>
+          
+          <li><a href="sect0001.html#def:helmholtz_eq_3">Theorem 1.5.1</a></li>
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtz_eq_4" class="lean_decl">helmholtz_eq_4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    Expanding the logarithm using \(\ln (ab) = \ln a + \ln b\): </p>
+<div class="displaymath" id="a0000000017">
+  \[  A = -k_B T \left[\ln \left(\frac{V^N}{N! h^{3N}}\right) + \frac{3N}{2} \ln (2\pi m k_B T)\right]  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000016">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Apply logarithm properties to separate the product. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="def:helmholtz_eq_5">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.5.3</span>
+    <span class="theorem_thmtitle">Helmholtz Free Energy Step 3</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:helmholtz_eq_5">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000018"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:helmholtzFreeEnergy">Definition 1.3.2</a></li>
+          
+          <li><a href="sect0001.html#def:helmholtz_eq_4">Theorem 1.5.2</a></li>
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtz_eq_5" class="lean_decl">helmholtz_eq_5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    Further expanding using logarithm properties \(\ln (a/b) = \ln a - \ln b\) and \(\ln (a^n) = n\ln a\): </p>
+<div class="displaymath" id="a0000000019">
+  \[  A = -k_B T \left[N \ln V - \ln N! - 3N \ln h + \frac{3N}{2} \ln (2\pi m k_B T)\right]  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000018">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Apply logarithm rules to expand the fraction and powers. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="def:helmholtz_eq_6_stirling">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.5.4</span>
+    <span class="theorem_thmtitle">Helmholtz Free Energy with Stirling</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:helmholtz_eq_6_stirling">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000020"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+          <li><a href="sect0001.html#def:stirlingApprox">Definition 1.4.1</a></li>
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtz_eq_6_stirling" class="lean_decl">helmholtz_eq_6_stirling</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    Applying Stirling’s approximation \(\ln N! = N \ln N - N\): </p>
+<div class="displaymath" id="a0000000021">
+  \[  -k_B T \left[N \ln V - (N \ln N - N) - 3N \ln h + \frac{3N}{2} \ln (2\pi m k_B T)\right] = -k_B T \left[N \ln \left(\frac{V}{N}\right) + N - 3N \ln h + \frac{3N}{2} \ln (2\pi m k_B T)\right]  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000020">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Algebraic manipulation after substituting Stirling’s approximation. </p>
+
+  </div>
+</div>
+<h1 id="a0000000022">1.6 Main Results</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:thermalWavelengthSqFactor">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.6.1</span>
+    <span class="definition_thmtitle">Thermal Wavelength Factor</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:thermalWavelengthSqFactor">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/thermalWavelengthSqFactor" class="lean_decl">thermalWavelengthSqFactor</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>    The thermal de Broglie wavelength squared factor: </p>
+<div class="displaymath" id="a0000000023">
+  \[  \lambda _{\text{th}}^2 = \frac{h^2}{2\pi m k_B T}  \]
+</div>
+<p> This is a fundamental quantum mechanical length scale at temperature \(T\). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="def:helmholtzFreeEnergy_final_form">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.6.2</span>
+    <span class="theorem_thmtitle">Helmholtz Free Energy Final Form</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:helmholtzFreeEnergy_final_form">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:helmholtzFreeEnergy">Definition 1.3.2</a></li>
+          
+          <li><a href="sect0001.html#def:thermalWavelengthSqFactor">Definition 1.6.1</a></li>
+          
+          <li><a href="sect0001.html#def:helmholtz_eq_3">Theorem 1.5.1</a></li>
+          
+          <li><a href="sect0001.html#def:helmholtz_eq_4">Theorem 1.5.2</a></li>
+          
+          <li><a href="sect0001.html#def:helmholtz_eq_5">Theorem 1.5.3</a></li>
+          
+          <li><a href="sect0001.html#def:helmholtz_eq_6_stirling">Theorem 1.5.4</a></li>
+          
+          <li><a href="sect0001.html#def:stirling_approximation_asymptotic">Theorem 1.4.2</a></li>
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtzFreeEnergy_final_form" class="lean_decl">helmholtzFreeEnergy_final_form</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    The Helmholtz free energy for an ideal gas takes the Sackur-Tetrode form (Equation 7): </p>
+<div class="displaymath" id="a0000000025">
+  \[  A = -N k_B T \left[\ln \left(\frac{V}{N}\right) + 1 + \frac{3}{2} \ln \left(\frac{2\pi m k_B T}{h^2}\right)\right]  \]
+</div>
+<p> This is the main result expressing the free energy in terms of the fundamental physical parameters. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000024">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> The result follows from the chain of algebraic simplifications starting from Equation 3 through Equation 6, combined with further algebraic manipulation to achieve the final form. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="def:helmholtzFreeEnergy_final_form'">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.6.3</span>
+    <span class="theorem_thmtitle">Helmholtz Free Energy Alternative Form</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:helmholtzFreeEnergy_final_form'">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:helmholtzFreeEnergy">Definition 1.3.2</a></li>
+          
+          <li><a href="sect0001.html#def:thermalWavelengthSqFactor">Definition 1.6.1</a></li>
+          
+          <li><a href="sect0001.html#def:helmholtzFreeEnergy_final_form">Theorem 1.6.2</a></li>
+          
+          <li><a href="sect0001.html#def:thermalWavelengthSqFactor">Definition 1.6.1</a></li>
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtzFreeEnergy_final_form'" class="lean_decl">helmholtzFreeEnergy_final_form'</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    The Helmholtz free energy can alternatively be written in terms of the thermal wavelength: </p>
+<div class="displaymath" id="a0000000027">
+  \[  A = -N k_B T \left[\ln \left(\frac{V}{N}\right) + 1 + \frac{3}{2} \ln \left(\frac{1}{\lambda _{\text{th}}^2}\right)\right]  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000026">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Direct substitution of the definition of thermal wavelength factor into the final form. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="def:helmholtzFreeEnergy_final_form'_negated">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.6.4</span>
+    <span class="theorem_thmtitle">Helmholtz Free Energy Alternative Form (Negated)</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:helmholtzFreeEnergy_final_form'_negated">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000028"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:helmholtzFreeEnergy">Definition 1.3.2</a></li>
+          
+          <li><a href="sect0001.html#def:thermalWavelengthSqFactor">Definition 1.6.1</a></li>
+          
+          <li><a href="sect0001.html#def:helmholtzFreeEnergy_final_form">Theorem 1.6.2</a></li>
+          
+          <li><a href="sect0001.html#def:thermalWavelengthSqFactor">Definition 1.6.1</a></li>
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtzFreeEnergy_final_form'_negated" class="lean_decl">helmholtzFreeEnergy_final_form'_negated</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    The Helmholtz free energy can alternatively be written emphasizing the thermal wavelength: </p>
+<div class="displaymath" id="a0000000029">
+  \[  A = -N k_B T \left[\ln \left(\frac{V}{N}\right) + 1 + \frac{3}{2} \ln \left(\frac{1}{\lambda _{\text{th}}^2}\right)\right]  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000028">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> The proof involves algebraic manipulation and the use of logarithm properties, particularly \(\log (a^b) = b \log a\), combined with normalization and ring simplification techniques. </p>
+
+  </div>
+</div>
+<h1 id="a0000000030">1.7 Physical Consequences</h1>
+<div class="theorem_thmwrapper theorem-style-plain" id="def:helmholtz_extensive">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.7.1</span>
+    <span class="theorem_thmtitle">Extensivity of Helmholtz Free Energy</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:helmholtz_extensive">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000031"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+          <li><a href="sect0001.html#def:helmholtzFreeEnergy">Definition 1.3.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/helmholtz_extensive" class="lean_decl">helmholtz_extensive</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    The Helmholtz free energy is extensive: for any positive constant \(c {\gt} 0\), there exists a function \(f\) such that </p>
+<div class="displaymath" id="a0000000032">
+  \[  A = N \cdot f  \]
+</div>
+<p> That is, for fixed intensive variables (such as \(V/N\) and \(T\)), the free energy scales linearly with the number of particles \(N\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000031">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>This follows from examining the final form and observing that \(A\) can be factored as \(N\) times a function of intensive variables. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="def:pressure_from_helmholtz">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.7.2</span>
+    <span class="theorem_thmtitle">Pressure from Helmholtz Free Energy</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#def:pressure_from_helmholtz">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000033"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:IdealGasParams">Definition 1.1.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/ATOMSLab/Autoformalization/blob/main/formal/ideal_gas_law_derivation.lean/find/#doc/pressure_from_helmholtz" class="lean_decl">pressure_from_helmholtz</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    The pressure can be obtained from the Helmholtz free energy via the thermodynamic relation \(P = -\frac{\partial A}{\partial V}\) at constant \(T\) and \(N\). This yields: </p>
+<div class="displaymath" id="a0000000034">
+  \[  P = \frac{N k_B T}{V}  \]
+</div>
+<p> which is the ideal gas law \(PV = Nk_BT\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000033">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Differentiate the final form with respect to \(V\) at constant \(T\) and \(N\). </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="index.html" title="ideal gas law"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="ideal gas law"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>
